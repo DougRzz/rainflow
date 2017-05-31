@@ -58,10 +58,9 @@ def extract_cycles(series):
             else:
                 # Count Y as one cycle and discard the peak and the valley of Y
                 full.append(Y)
-                last = points.pop()
+                points[-2]=points.pop()
                 points.pop()
-                points.pop()
-                points.append(last)
+             
     else:
         # Count the remaining ranges as one-half cycles
         while len(points) > 1:
